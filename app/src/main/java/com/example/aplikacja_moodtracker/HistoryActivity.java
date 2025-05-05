@@ -138,6 +138,11 @@ public class HistoryActivity extends AppCompatActivity implements NavigationView
         } else if (id == R.id.nav_history) {
             // Jesteśmy już na HistoryActivity
         }
+        else if (id == R.id.nav_stats) {
+            Intent intent = new Intent(HistoryActivity.this, StatsActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+        }
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
