@@ -252,17 +252,13 @@ public class StatsActivity extends AppCompatActivity implements NavigationView.O
             startActivity(intent);
         } else if (id == R.id.nav_stats) {
             // Jesteśmy już na StatsActivity
+        } else if (id == R.id.nav_options) {
+            Intent intent = new Intent(StatsActivity.this, SettingsActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
         }
+
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
     }
 }
